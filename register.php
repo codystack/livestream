@@ -44,21 +44,21 @@ session_start();
                                 <div class="text-center">
                                     <img src="https://i.imgur.com/B6LyEZD.png" alt="login icon" class="img-fluid rounded mb-4" width="112" height="112" />
                                 </div>
-                                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
+                                <form id="paymentForm" method="post">
                                     <div class="form-group">
                                         <label>Username</label>
                                         <input class="form-control form-control-lg" type="text" pattern="[a-zA-Z ]+" required name="username" placeholder="Enter username" />
                                     </div>
                                     <div class="form-group">
                                         <label>Email</label>
-                                        <input class="form-control form-control-lg" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required name="email" placeholder="Enter email" />
+                                        <input class="form-control form-control-lg" id="email-address" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required name="email" placeholder="Enter email" />
                                     </div>
                                     <div class="form-group">
-                                        <label>Phone number</label>
-                                        <input class="form-control form-control-lg" type="tel"  pattern="[0-9]+" required minlength="15" name="tel" placeholder="Enter phone number" />
+                                        <label>Amount</label>
+                                        <input class="form-control form-control-lg" type="text"  id="amount" placeholder="2,000" disabled />
                                     </div>
                                     <div class="text-center mt-3">
-                                        <button type="submit" class="btn btn-lg btn-primary" name="register">Get Access</button>
+                                        <button type="submit" class="btn btn-lg btn-primary"  onclick="payWithPaystack()">Get Access</button>
                                     </div>
                                 </form>
                             </div>
@@ -89,35 +89,28 @@ session_start();
     </defs>
 </svg>
 <script src="js/app.js"></script>
-<!--<script type="text/javascript">
-$(document).ready(function(){
-    $("#regsuccessful").modal('show');
-});
-</script>-->
+<script src="https://js.paystack.co/v1/inline.js"></script>
 
 <script type="text/javascript">
-    window.onload = function () {
-        var txtPassword = document.getElementById("txtPassword");
-        var txtConfirmPassword = document.getElementById("txtConfirmPassword");
-        txtPassword.onchange = ConfirmPassword;
-        txtConfirmPassword.onkeyup = ConfirmPassword;
-        function ConfirmPassword() {
-            txtConfirmPassword.setCustomValidity("");
-            if (txtPassword.value != txtConfirmPassword.value) {
-                txtConfirmPassword.setCustomValidity("Passwords do not match.");
+    const paymentForm = document.getElementById('paymentForm');
+    paymentForm.addEventListener("submit", payWithPaystack, false);
+    function payWithPaystack(e) {
+        e.preventDefault();
+        let handler = PaystackPop.setup({
+            key: 'pk_test_274c204e073e2b9d908430573ba1603a843c66d4', // Replace with your public key
+            email: document.getElementById("email-address").value,
+            amount: document.getElementById("200000").value * 100,
+            ref: ''+Math.floor((Math.random() * 1000000000) + 1), // generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you
+            // label: "Optional string that replaces customer email"
+            onClose: function(){
+                alert('Window closed.');
+            },
+            callback: function(response){
+                let message = 'Payment complete! Reference: ' + response.reference;
+                alert(message);
             }
-        }
-    }
-</script>
-
-<script type="text/javascript">
-    function myFunction() {
-        var x = document.getElementById("password");
-        if (x.type === "password") {
-            x.type = "text";
-        } else {
-            x.type = "password";
-        }
+        });
+        handler.openIframe();
     }
 </script>
 
