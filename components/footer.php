@@ -1,4 +1,26 @@
 <footer class="footer">
+    <div class="container-fluid">
+        <div class="row text-muted">
+            <div class="col-8 text-left">
+                <ul class="list-inline">
+                    <li class="list-inline-item">
+                        <a class="text-muted" href="https://voteonline.com.ng/" target="_blank">Support</a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a class="text-muted" href="https://voteonline.com.ng/privacy" target="_blank">Privacy</a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a class="text-muted" href="https://voteonline.com.ng/terms" target="_blank">Terms of Service</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-4 text-right">
+                <p class="mb-0">
+                    &copy; <script>document.write(new Date().getFullYear());</script> Powered by: <a href="https://voteonline.com.ng/" target="_blank" class="text-muted">Vote Online&trade;</a>
+                </p>
+            </div>
+        </div>
+    </div>
 </footer>
 </div>
 
@@ -210,30 +232,8 @@
     document.getElementById("greet").innerHTML = greeting;
 </script>
 
-<!-- Make Deposit Modal Start -->
-<div class="modal fade" id="depositmodal" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body m-3" style="text-align: center">
-                <h2>Hello <?php echo $_SESSION['fullname']  ?></h2>
-                <p class="mb-3">No need to waste time, make a deposit/investment today and get your returns in no time. Get upto 50% ROI in 48hrs.<br><strong>Note:</strong> Minimum of ₦5k and Maximum of ₦300k</p>
-                <a href="deposit" class="btn btn-primary btn-lg mb-5">Make Deposit</a>
-            </div>
-        </div>
-    </div>
-</div>
 
 
-<script type="text/javascript">
-    $(document).ready(function(){
-        $("#depositmodal").modal('show');
-    });
-</script>
 
 <script type="text/javascript">
     function myFunction() {
@@ -245,30 +245,6 @@
 </script>
 <!-- Make Deposit Modal End -->
 
-<!-- Activation Fee Modal Start -->
-<div class="modal fade" id="activatiomodal" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body m-3" style="text-align: center">
-                <h2>Hello <?php echo $_SESSION['fullname']  ?></h2>
-                <p class="mb-3">No need to waste time, make a deposit/investment today and get your returns in no time. Get upto 50% ROI in 48hrs.<br><strong>Note:</strong> Minimum of ₦5k and Maximum of ₦700k</p>
-                <a href="deposit" class="btn btn-primary btn-lg mb-5">Make Deposit</a>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<script type="text/javascript">
-    $(document).ready(function(){
-        $("#depositmodal").modal('show');
-    });
-</script>
 
 <script type="text/javascript">
     function myFunction() {
@@ -279,9 +255,7 @@
         alert("Ref link copied: " + copyText.value);
     }
 </script>
-<!-- Activation Fee Modal End -->
 
-<?php include ('../components/tawkto.php'); ?>
 
 </body>
 

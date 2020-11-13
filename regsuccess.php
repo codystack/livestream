@@ -1,5 +1,5 @@
 <?php
-header( "refresh:2;url=login" );
+header( "refresh:20;url=login" );
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,9 +10,9 @@ header( "refresh:2;url=login" );
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Elite Funds is a unique peer 2 peer platform, which provides its members the ability to earn money by funding one another through her large community of help givers. In today’s economy, it seems that everyone is looking for a way to earn a few extra bucks. The shrinking job market, falling asset values, and economic uncertainty that makes every day a struggle.">
-    <link rel="shortcut icon" type="image/x-icon" href="https://i.imgur.com/vGYIf1a.png">
+    <link rel="shortcut icon" type="image/x-icon" href="https://i.imgur.com/kVguEsz.png">
 
-    <title>Register :: Elite Funds&trade;</title>
+    <title>Stream Online&trade; :: Nigeria's 1st online streaming platform</title>
 
     <link href="css/modern.css" rel="stylesheet">
 
@@ -20,7 +20,7 @@ header( "refresh:2;url=login" );
 
 </head>
 
-<body class="theme-blue">
+<body style="background: url(https://i.imgur.com/YRaW9DX.jpg); background-repeat: no-repeat; background-attachment: fixed; background-size: cover;">
 <div class="splash active">
     <div class="splash-icon"></div>
 </div>
@@ -37,10 +37,10 @@ header( "refresh:2;url=login" );
                                 <div class="text-center">
                                     <img src="https://i.imgur.com/0XacUTM.png" class="mb-4" width="202" height="202" />
                                     <h2>YOUR REGISTRATION WAS SUCCESSFUL!</h2>
-                                    <p>Please check your mail or spam mail for confirmation mail.</p>
+                                    <p>Please check your mail or spam mail for access no.</p>
                                 </div>
 
-                                <form action="register">
+                                <form action="login">
                                     <div class="text-center mt-3">
                                         <button type="submit" class="btn btn-lg btn-primary">Go Back</button>
                                     </div>

@@ -1,5 +1,6 @@
 <?php
 session_start();
+require_once ('./config/controller.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -9,8 +10,13 @@ session_start();
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Elite Funds is a unique peer 2 peer platform, which provides its members the ability to earn money by funding one another through her large community of help givers. In today’s economy, it seems that everyone is looking for a way to earn a few extra bucks. The shrinking job market, falling asset values, and economic uncertainty that makes every day a struggle.">
-    <link rel="shortcut icon" type="image/x-icon" href="https://i.imgur.com/kVguEsz.png">
+    <meta property="og:url" content="https://voteonline.com.ng/"/>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Vote Online&trade; :: Nigeria's First Online Voting Platform" />
+    <meta property="og:description" content="Create an online contest with Vote Online, Own and run an online photo contest for your Peagents, Award Shows, Club Elections etc, for free or paid with our easy to use online voting platform."/>
+    <meta name="keywords" content="ThankGodOkoro.codes,ThankGod Okoro,Vote Online,VoteOnline,online voting,beauty pageant,software,voting,election,online contest,contest,award shows,award,shows,online election,digital voting,event ticket management,event voting,fashion award,headies awards,amvca,Africa Magic Viewers' Choice Awards,branding">
+    <meta property="og:image" content="https://i.imgur.com/3Vygtkm.png"/>
+    <meta name="author" content="ThankGod Okoro is a Software developer/programmer, Web + App Developer, UI/UX Designer, Brand Strategist & Product/Graphic Designer."><link rel="shortcut icon" type="image/x-icon" href="https://i.imgur.com/kVguEsz.png">
 
     <title>Stream Online&trade; :: Nigeria's 1st online streaming platform</title>
 
@@ -44,21 +50,21 @@ session_start();
                                 <div class="text-center">
                                     <img src="https://i.imgur.com/B6LyEZD.png" alt="login icon" class="img-fluid rounded mb-4" width="112" height="112" />
                                 </div>
-                                <form id="paymentForm" method="post">
+                                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" id="paymentForm" name="regform">
                                     <div class="form-group">
                                         <label>Username</label>
                                         <input class="form-control form-control-lg" type="text" pattern="[a-zA-Z ]+" required name="username" placeholder="Enter username" />
                                     </div>
                                     <div class="form-group">
                                         <label>Email</label>
-                                        <input class="form-control form-control-lg" id="email-address" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required name="email" placeholder="Enter email" />
+                                        <input class="form-control form-control-lg" id="email" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required name="email" placeholder="Enter email" />
                                     </div>
                                     <div class="form-group">
                                         <label>Amount</label>
-                                        <input class="form-control form-control-lg" type="text"  id="amount" placeholder="2,000" disabled />
+                                        <input class="form-control form-control-lg" type="text"  id="amount" value="2000" placeholder="2000" disabled />
                                     </div>
                                     <div class="text-center mt-3">
-                                        <button type="submit" class="btn btn-lg btn-primary"  onclick="payWithPaystack()">Get Access</button>
+                                        <button type="submit" class="btn btn-lg btn-primary" name="register">Get Access</button>
                                     </div>
                                 </form>
                             </div>
@@ -98,13 +104,13 @@ session_start();
         e.preventDefault();
         let handler = PaystackPop.setup({
             key: 'pk_test_274c204e073e2b9d908430573ba1603a843c66d4', // Replace with your public key
-            email: document.getElementById("email-address").value,
-            amount: document.getElementById("200000").value * 100,
+            email: document.getElementById("email").value,
+            amount: document.getElementById("amount").value * 100,
             ref: ''+Math.floor((Math.random() * 1000000000) + 1), // generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you
             // label: "Optional string that replaces customer email"
-            onClose: function(){
-                alert('Window closed.');
-            },
+            //onClose: function(){
+                //alert('Window closed.');
+            //},
             callback: function(response){
                 let message = 'Payment complete! Reference: ' + response.reference;
                 alert(message);
@@ -112,6 +118,16 @@ session_start();
         });
         handler.openIframe();
     }
+    callback: function(response){
+        $.ajax({
+            url: '/verify_transaction?reference='+ response.reference,
+            method: 'get',
+            success: function (response) {
+                // the transaction status is in response.data.status
+            }
+        });
+    }
+
 </script>
 
 

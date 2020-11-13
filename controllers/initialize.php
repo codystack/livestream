@@ -1,11 +1,11 @@
 <?php
 $curl = curl_init();
 
-$email = "";
+$email = "email";
 $amount = 200000;  //the amount in kobo. This value is actually NGN 300
 
 // url to go to after payment
-$callback_url = 'myapp.com/pay/callback.php';
+$callback_url = 'callback.php';
 
 curl_setopt_array($curl, array(
     CURLOPT_URL => "https://api.paystack.co/transaction/initialize",
