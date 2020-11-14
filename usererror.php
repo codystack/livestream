@@ -6,10 +6,15 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Elite Funds is a unique peer 2 peer platform, which provides its members the ability to earn money by funding one another through her large community of help givers. In today’s economy, it seems that everyone is looking for a way to earn a few extra bucks. The shrinking job market, falling asset values, and economic uncertainty that makes every day a struggle.">
-    <link rel="shortcut icon" type="image/x-icon" href="https://i.imgur.com/vGYIf1a.png">
+    <meta property="og:url" content="https://voteonline.com.ng/"/>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Vote Online&trade; :: Nigeria's First Online Voting Platform" />
+    <meta property="og:description" content="Create an online contest with Vote Online, Own and run an online photo contest for your Peagents, Award Shows, Club Elections etc, for free or paid with our easy to use online voting platform."/>
+    <meta name="keywords" content="ThankGodOkoro.codes,ThankGod Okoro,Vote Online,VoteOnline,online voting,beauty pageant,software,voting,election,online contest,contest,award shows,award,shows,online election,digital voting,event ticket management,event voting,fashion award,headies awards,amvca,Africa Magic Viewers' Choice Awards,branding">
+    <meta property="og:image" content="https://i.imgur.com/3Vygtkm.png"/>
+    <meta name="author" content="ThankGod Okoro is a Software developer/programmer, Web + App Developer, UI/UX Designer, Brand Strategist & Product/Graphic Designer."><link rel="shortcut icon" type="image/x-icon" href="https://i.imgur.com/kVguEsz.png">
 
-    <title>Register :: Elite Funds&trade;</title>
+    <title>Stream Online&trade; :: Nigeria's 1st online streaming platform</title>
 
     <link href="css/modern.css" rel="stylesheet">
 
@@ -17,7 +22,7 @@
 
 </head>
 
-<body class="theme-blue">
+<body style="background: url(https://i.imgur.com/YRaW9DX.jpg); background-repeat: no-repeat; background-attachment: fixed; background-size: cover;">
 <div class="splash active">
     <div class="splash-icon"></div>
 </div>
@@ -33,11 +38,11 @@
                             <div class="m-sm-4">
                                 <div class="text-center">
                                     <img src="https://i.imgur.com/tPKodUd.png" class="mb-4" width="202" height="202" />
-                                    <h2>Username Already Exist!</h2>
-                                    <p><strong>NOTE:</strong> Registering more than once leads to automatic disqualification.</p>
+                                    <h2>Wrong Username or Access Code</h2>
+                                    <p>Please verify or <a href="register">click here</a> to get access code</p>
                                 </div>
 
-                                <form action="register">
+                                <form action="login">
                                     <div class="text-center mt-3">
                                         <button type="submit" class="btn btn-lg btn-primary">Go Back</button>
                                     </div>

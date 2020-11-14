@@ -50,7 +50,7 @@ require_once ('./config/controller.php');
                                 <div class="text-center">
                                     <img src="https://i.imgur.com/B6LyEZD.png" alt="login icon" class="img-fluid rounded mb-4" width="112" height="112" />
                                 </div>
-                                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" id="paymentForm" name="regform">
+                                <form method="post" id="paymentForm">
                                     <div class="form-group">
                                         <label>Username</label>
                                         <input class="form-control form-control-lg" type="text" pattern="[a-zA-Z ]+" required name="username" placeholder="Enter username" />
@@ -64,7 +64,7 @@ require_once ('./config/controller.php');
                                         <input class="form-control form-control-lg" type="text"  id="amount" value="2000" placeholder="2000" disabled />
                                     </div>
                                     <div class="text-center mt-3">
-                                        <button type="submit" class="btn btn-lg btn-primary" name="register">Get Access</button>
+                                        <button type="submit" class="btn btn-lg btn-primary" name="register" onclick="payWithPaystack()">Get Access</button>
                                     </div>
                                 </form>
                             </div>
@@ -111,22 +111,30 @@ require_once ('./config/controller.php');
             //onClose: function(){
                 //alert('Window closed.');
             //},
-            callback: function(response){
+            callback: function(response) {
                 let message = 'Payment complete! Reference: ' + response.reference;
-                alert(message);
+                //alert(message);
+                $.ajax({
+                    url: '/verify_transaction?reference=' + response.reference,
+                    method: 'get',
+                    success: function (response) {
+                        // the transaction status is in response.data.status
+                        $.ajax({
+                            url: "./config/controller.php",
+                            method: 'post',
+                            data: formdata
+                            success: function (response) {
+                                // the transaction status is in response.data.status
+
+                            }
+                        });
+                    }
+                });
             }
         });
         handler.openIframe();
     }
-    callback: function(response){
-        $.ajax({
-            url: '/verify_transaction?reference='+ response.reference,
-            method: 'get',
-            success: function (response) {
-                // the transaction status is in response.data.status
-            }
-        });
-    }
+
 
 </script>
 

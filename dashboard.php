@@ -22,53 +22,80 @@ require_once "./config/controller.php";
 							</div>
 						</div>
 						<div class="col-md-12 col-lg-4 col-xl-4">
+                            <!-- Active Viewers -->
 							<div class="card">
 								<div class="card-body">
 									<div class="row">
 										<div class="col mt-0">
-											<h5 class="card-title">Total Withdrawal</h5>
+											<h5 class="card-title">Live Users</h5>
 										</div>
 
 										<div class="col-auto">
 											<div class="avatar">
 												<div class="avatar-title rounded-circle bg-primary-dark">
-													<i class="align-middle" data-feather="database"></i>
+													<i class="align-middle" data-feather="users"></i>
 												</div>
 											</div>
 										</div>
 									</div>
-									<h1 class="display-5 mt-1 mb-3">₦0.00</h1>
-									<div class="mb-0">
-										Total amount withdrawn.
-									</div>
+									<h1 class="display-5 mt-1 mb-3"><?php echo $count_user; ?></h1>
+
 								</div>
 							</div>
-						</div>
-					</div>
 
-                    <!-- Access Code Start -->
-                    <div class="row justify-content-center">
-                        <div class="col-12 col-lg-6">
+                            <!-- Next Event -->
                             <div class="card">
-                                <div class="card-header">
-                                    <h5 class="card-title mb-0">My Live Streaming Access Code</h5>
-                                </div>
                                 <div class="card-body">
-                                    <div class="col-md">
-                                        <div class="form-group">
-                                            <div class="input-group input-group-lg">
-                                                <input type="text" class="form-control" id="refLink" value="<?php echo $_SESSION['accessno'] ?>">
-                                                <span class="input-group-append">
-                                          <button onclick="myFunction()" class="btn btn-primary btn-lg" type="button">Copy</button>
-                                        </span>
+                                    <div class="row">
+                                        <div class="col mt-0">
+                                            <h5 class="card-title">Next Event</h5>
+                                        </div>
+
+                                        <div class="col-auto">
+                                            <div class="avatar">
+                                                <div class="avatar-title rounded-circle bg-primary-dark">
+                                                    <i class="align-middle" data-feather="calendar"></i>
+                                                </div>
                                             </div>
+                                        </div>
+                                    </div>
+                                    <h1 class="display-5 mt-1 mb-3">Preliminary Show</h1>
+                                    <div class="mb-0">
+                                        22nd Nov 2020 | 10:00AM (WAT)
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <!-- Access Code -->
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="row mb-3">
+                                        <div class="col mt-0">
+                                            <h5 class="card-title">Streaming Access Code</h5>
+                                        </div>
+
+                                        <div class="col-auto">
+                                            <div class="avatar">
+                                                <div class="avatar-title rounded-circle bg-primary-dark">
+                                                    <i class="align-middle" data-feather="code"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group input-group-lg">
+                                            <input type="text" class="form-control" id="refLink" value="<?php echo $_SESSION['accessno'] ?>">
+                                            <span class="input-group-append">
+                                                  <button onclick="myFunction()" class="btn btn-primary btn-lg" type="button">Copy</button>
+                                                </span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <!-- Access Code End -->
+					</div>
+
 			</main>
 
 <?php include ('./components/footer.php'); ?>

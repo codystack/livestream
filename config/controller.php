@@ -197,8 +197,31 @@ if (isset($_POST['login'])) {
             $_SESSION['success'] = "You are now logged in";
             header('location: dashboard');
         }else {
-            array_push($errors);
+            header('location: usererror');
         }
     }
 }
 //Login User End
+
+
+//Show Users Online Start
+
+$session = session_id();
+$time = time();
+$time_out_in_seconds = 10;
+$time_out = $time - $time_out_in_seconds;
+
+$query = "SELECT * FROM online_users WHERE session = '$session'";
+$send_query = mysqli_query($con, $query);
+$count = mysqli_num_rows($send_query);
+
+if ($count == NULL) {
+    mysqli_query($con, "INSERT INTO online_users(session, time) VALUES('$session', '$time')");
+}else {
+    mysqli_query($con, "UPDATE online_users SET time = '$time' WHERE session = '$session'");
+}
+
+$online_users_query = mysqli_query($con, "SELECT * FROM online_users WHERE time > '$time_out'");
+$count_user = mysqli_num_rows($online_users_query);
+
+//Show Users Online End
