@@ -52,7 +52,7 @@ session_start();
                                 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" id="paymentForm">
                                     <div class="form-group">
                                         <label>Username</label>
-                                        <input class="form-control form-control-lg" type="text" pattern="[a-zA-Z ]+" required name="username" placeholder="Enter username" />
+                                        <input class="form-control form-control-lg" id="username" type="text" pattern="[a-zA-Z ]+" required name="username" placeholder="Enter username" />
                                     </div>
                                     <div class="form-group">
                                         <label>Email</label>
