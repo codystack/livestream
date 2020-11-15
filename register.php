@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once ('webhook.php');
+require_once ('./config/controller.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">

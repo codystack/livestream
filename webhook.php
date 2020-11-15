@@ -1,5 +1,4 @@
 <?php
-require_once ('./config/controller.php');
 //add the db call here
 if ((strtoupper($_SERVER['REQUEST_METHOD']) != 'POST' ) || !array_key_exists('HTTP_X_PAYSTACK_SIGNATURE', $_SERVER) ) {
     // only a post with paystack signature header gets our attention
