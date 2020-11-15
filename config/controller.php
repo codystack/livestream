@@ -102,7 +102,7 @@ if (isset($_POST['register'])) {
                                                     <tr>
                                                         <td class='text-center pdb-2-5x'>
                                                             <center>
-                                                            <a href='https://cryptfxinvest.com' target='_blank'><img class='email-logo' src='https://i.imgur.com/glbGJvX.png' /></a>
+                                                            <a href='https://voteonline.com.ng' target='_blank'><img class='email-logo' src='https://i.imgur.com/OHRyC4K.png' /></a>
                                                             </center>
                                                         </td>
                                                     </tr>
@@ -112,23 +112,23 @@ if (isset($_POST['register'])) {
                                                 <div style='padding-left: 30px;'>
                                                 <tbody>
                                                     <tr>
-                                                        <td class='pd-3x pdb-1-5x'><h2 class='email-heading'>Confirm Your E-Mail Address</h2></td>
+                                                        <td class='pd-3x pdb-1-5x'><h2 class='email-heading'>Activation Code</h2></td>
                                                     </tr>
                                                     <tr>
                                                         <td class='pdl-3x pdr-3x pdb-2x'>
-                                                            <p class='mgb-1x'>Hi $name,</p>
+                                                            <p class='mgb-1x'>Hi $username,</p>
                                                             <p class='mgb-1x'>
                                                                 Welcome! <br />
-                                                                You are receiving this email because you have registered on CryptFX Invest.
+                                                                You are receiving this email because you have registered on Stream Online.
                                                             </p>
-                                                            <p class='mgb-1x'>Click on the button below to activate your account.</p>
-                                                            <a href='https://cryptfxinvest.com/auth/verify-successful.php?hash=$hash' class='email-btn'>Verify Email</a>
+                                                            <p class='mgb-1x'>Copy the access code below to activate and access your account.</p>
+                                                            Access Code: $accessno
                                                         </td>
                                                     </tr>
                                                     <tr>
                                                         <td class='pd-3x pdt-2x pdb-3x'>
                                                             <p>If you did not make this request, please contact us or ignore this message.</p>
-                                                            <p class='email-note'>This is an automatically generated email please do not reply to this email. If you face any issues, please contact us at help@cryptfxinvest.com</p>
+                                                            <p class='email-note'>This is an automatically generated email please do not reply to this email. If you face any issues, please contact us at help@voteonline.com.ng</p>
                                                         </td>
                                                     </tr>
                                                 </tbody>
@@ -153,7 +153,7 @@ if (isset($_POST['register'])) {
             $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 
             // More headers
-            $headers .= 'From: CryptFX Invest™ <donotreply@cryptfxinvest.com>' . "\r\n";
+            $headers .= 'From: Stream Online™ <donotreply@voteonline.com.ng>' . "\r\n";
 
             mail($to,$subject,$message,$headers);
         }

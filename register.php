@@ -1,6 +1,5 @@
 <?php
 session_start();
-require_once ('./config/controller.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -50,7 +49,7 @@ require_once ('./config/controller.php');
                                 <div class="text-center">
                                     <img src="https://i.imgur.com/B6LyEZD.png" alt="login icon" class="img-fluid rounded mb-4" width="112" height="112" />
                                 </div>
-                                <form method="post" id="paymentForm">
+                                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" id="paymentForm">
                                     <div class="form-group">
                                         <label>Username</label>
                                         <input class="form-control form-control-lg" type="text" pattern="[a-zA-Z ]+" required name="username" placeholder="Enter username" />
@@ -61,10 +60,10 @@ require_once ('./config/controller.php');
                                     </div>
                                     <div class="form-group">
                                         <label>Amount</label>
-                                        <input class="form-control form-control-lg" type="text"  id="amount" value="2000" placeholder="2000" disabled />
+                                        <input class="form-control form-control-lg" type="text"  id="amount" value="2000" disabled />
                                     </div>
                                     <div class="text-center mt-3">
-                                        <button type="submit" class="btn btn-lg btn-primary" name="register" onclick="payWithPaystack()">Get Access</button>
+                                        <button class="btn btn-lg btn-primary" onclick="payWithPaystack()">Get Access</button>
                                     </div>
                                 </form>
                             </div>
@@ -95,49 +94,9 @@ require_once ('./config/controller.php');
     </defs>
 </svg>
 <script src="js/app.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
 <script src="https://js.paystack.co/v1/inline.js"></script>
-
-<script type="text/javascript">
-    const paymentForm = document.getElementById('paymentForm');
-    paymentForm.addEventListener("submit", payWithPaystack, false);
-    function payWithPaystack(e) {
-        e.preventDefault();
-        let handler = PaystackPop.setup({
-            key: 'pk_test_274c204e073e2b9d908430573ba1603a843c66d4', // Replace with your public key
-            email: document.getElementById("email").value,
-            amount: document.getElementById("amount").value * 100,
-            ref: ''+Math.floor((Math.random() * 1000000000) + 1), // generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you
-            // label: "Optional string that replaces customer email"
-            //onClose: function(){
-                //alert('Window closed.');
-            //},
-            callback: function(response) {
-                let message = 'Payment complete! Reference: ' + response.reference;
-                //alert(message);
-                $.ajax({
-                    url: '/verify_transaction?reference=' + response.reference,
-                    method: 'get',
-                    success: function (response) {
-                        // the transaction status is in response.data.status
-                        $.ajax({
-                            url: "./config/controller.php",
-                            method: 'post',
-                            data: formdata
-                            success: function (response) {
-                                // the transaction status is in response.data.status
-
-                            }
-                        });
-                    }
-                });
-            }
-        });
-        handler.openIframe();
-    }
-
-
-</script>
-
+<script src="js/pay.js"></script>
 
 </body>
 
