@@ -75,17 +75,17 @@ $to = $email;
                                                 <div style='padding-left: 30px;'>
                                                 <tbody>
                                                     <tr>
-                                                        <td class='pd-3x pdb-1-5x'><h2 class='email-heading'>Activation Code</h2></td>
+                                                        <td class='pd-3x pdb-1-5x'><h2 class='email-heading'>Live Streaming Access Code</h2></td>
                                                     </tr>
                                                     <tr>
                                                         <td class='pdl-3x pdr-3x pdb-2x'>
-                                                            <p class='mgb-1x'>Hi $username,</p>
+                                                            <p class='mgb-1x'>Hi <strong>$username,</strong></p>
                                                             <p class='mgb-1x'>
                                                                 Welcome! <br />
                                                                 You are receiving this email because you have subscribed to Nigerian Queen Stream Online.
                                                             </p>
                                                             <p class='mgb-1x'>Copy the access code below to activate and access your account.</p>
-                                                            Access Code: $accessno
+                                                            <strong>Access Code:</strong> $accessno
                                                         </td>
                                                     </tr>
                                                     <tr>
