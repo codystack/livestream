@@ -95,6 +95,11 @@ session_start();
     </defs>
 </svg>
 <script src="js/app.js"></script>
+<!-- Tidio Chat -->
+<script src="//code.tidio.co/w21wepezusnmn1y15ukvzdhohe9xiten.js" async></script>
+<script type="text/javascript">
+    tidioChatApi.display(true);
+</script>
 <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
 <script src="https://js.paystack.co/v1/inline.js"></script>
 <script src="js/pay.js"></script>

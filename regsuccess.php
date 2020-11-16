@@ -37,7 +37,7 @@ header( "refresh:20;url=login" );
                                 <div class="text-center">
                                     <img src="https://i.imgur.com/0XacUTM.png" class="mb-4" width="202" height="202" />
                                     <h2>YOUR REGISTRATION WAS SUCCESSFUL!</h2>
-                                    <p>Please check your mail or spam mail for access no.</p>
+                                    <p>Please check your mail or spam mail for access code.</p>
                                 </div>
 
                                 <form action="login">

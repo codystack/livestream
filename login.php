@@ -122,6 +122,11 @@ if (isset($_POST['login'])) {
     </defs>
 </svg>
 <script src="js/app.js"></script>
+<!-- Tidio Chat -->
+<script src="//code.tidio.co/w21wepezusnmn1y15ukvzdhohe9xiten.js" async></script>
+<script type="text/javascript">
+    tidioChatApi.display(true);
+</script>
 </body>
 
 

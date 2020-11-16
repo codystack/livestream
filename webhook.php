@@ -9,7 +9,7 @@ if ((strtoupper($_SERVER['REQUEST_METHOD']) != 'POST' ) || !array_key_exists('HT
 }
 // Retrieve the request's body
 $input = @file_get_contents("php://input");
-define('PAYSTACK_SECRET_KEY','sk_test_0e30a39f85963904df8dc24ce2110a6e2061bd6b');
+define('PAYSTACK_SECRET_KEY','sk_live_9335950e6b799a2ac373bb91a7587786ebc9c3a1');
 if(!$_SERVER['HTTP_X_PAYSTACK_SIGNATURE'] || ($_SERVER['HTTP_X_PAYSTACK_SIGNATURE'] !== hash_hmac('sha512', $input, PAYSTACK_SECRET_KEY))){
   // silently forget this ever happened
   exit();
