@@ -1,7 +1,7 @@
 <?php
 function sendMail($email,$username,$accessno){
 $to = $email;
-            $subject = "Live Access Code";
+            $subject = "Live Streaming Access Code";
 
             $message = "
                             <html>
