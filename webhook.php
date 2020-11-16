@@ -40,9 +40,9 @@ switch($event->event){
     // charge.success
     case 'charge.success':
  //generate accessno 
-$str='1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcefghijklmnopqrstuvwxyz';
-$accessno=substr(str_shuffle($str), 0, $length);
-$accessno= mysqli_real_escape_string($con, $accessno);
+$accessno='1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcefghijklmnopqrstuvwxyz';
+//$accessno=substr(str_shuffle($str), 0, $length);
+//$accessno= mysqli_real_escape_string($con, $accessno);
 
 
   $event = json_decode($input);
