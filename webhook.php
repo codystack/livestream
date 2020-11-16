@@ -20,7 +20,7 @@ http_response_code(200);
 
 
 //loop and check which event is recieved and act accordingly
-
+$event = json_decode($input);
 switch($event->event){
 
     // subscription.create
