@@ -1,6 +1,5 @@
 <?php
 session_start();
-require_once ('./config/controller.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -70,7 +69,7 @@ require_once ('./config/controller.php');
                             </div>
                             <div class="text-center mt-4">
                                 <p class="lead">
-                                    Already have access? <a href="login"><strong>Login</strong></a>
+                                    Already have access? <a href="login" style="text-decoration: none"><strong>Login</strong></a>
                                 </p>
                             </div>
                         </div>

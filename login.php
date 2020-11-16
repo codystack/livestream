@@ -61,7 +61,7 @@ require_once ('./config/controller.php');
                             </div>
                             <div class="text-center mt-4">
                                 <p class="lead">
-                                    Don't have access? <a href="register"><strong>Get Access</strong></a>
+                                    Don't have access? <a href="register" style="text-decoration: none"><strong>Get Access</strong></a>
                                 </p>
                             </div>
                         </div>
