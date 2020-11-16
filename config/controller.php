@@ -1,5 +1,28 @@
 <?php
-require_once ('./config/dbconnect.php');
+require_once ('dbconnect.php');
+
+if(isset($_POST['email'])){
+    $email = $_POST['email'];
+
+    $query = "select count(*) as cntUser from users where email='".$email."'";
+
+    $result = mysqli_query($con,$query);
+    $response = "<span style='color: green;'>Email Available.</span>";
+    if(mysqli_num_rows($result)){
+        $row = mysqli_fetch_array($result);
+
+        $count = $row['cntUser'];
+
+        if($count > 0){
+            $response = "use";
+        }
+
+    }
+
+    echo $response;
+    die;
+}
+
 //Register User Start
 $length = 10;
 $str = '1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcefghijklmnopqrstuvwxyz';

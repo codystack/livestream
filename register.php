@@ -57,6 +57,7 @@ session_start();
                                     <div class="form-group">
                                         <label>Email</label>
                                         <input class="form-control form-control-lg" id="email" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required name="email" placeholder="Enter email" />
+                                        <div id="email_response" ></div>
                                     </div>
                                     <div class="form-group">
                                         <label>Amount</label>
@@ -97,6 +98,40 @@ session_start();
 <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
 <script src="https://js.paystack.co/v1/inline.js"></script>
 <script src="js/pay.js"></script>
+
+<script>
+    $(document).ready(function(){
+
+        $("#email").keyup(function(){
+
+            $("#email_response").html("");
+
+            var email = $(this).val().trim();
+
+            if(email != ''){
+
+                $.ajax({
+                    url: './config/controller.php',
+                    type: 'post',
+                    data: {email: email},
+                    success: function(response){
+
+                        if(response=="use"){
+
+                            $('#email').val("");
+                            $('#email_response').html("Email is already in use");
+                        }
+
+                    }
+                });
+            }else{
+                $("#email_response").html("");
+            }
+
+        });
+
+    });
+</script>
 
 </body>
 
