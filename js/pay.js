@@ -14,7 +14,7 @@ function payWithPaystack(e) {
 
         },
         callback: function(response){
-            if(myref==response.reference){
+            if(myref===response.reference){
                 location.replace("https://live.nigerianqueen.org/regsuccess")
             }
         }

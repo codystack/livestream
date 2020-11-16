@@ -50,7 +50,6 @@ $username=$event->data->metadata->username;
 
 mysqli_query($con,"insert into users(email,username,accessno) values ('$email','$username','$accessno') ");
 
-
      
         break;
     // subscription.disable
