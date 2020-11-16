@@ -1,65 +1,7 @@
 <?php
-require_once ('dbconnect.php');
-
-if(isset($_POST['email'])){
-    $email = $_POST['email'];
-
-    $query = "select count(*) as cntUser from users where email='".$email."'";
-
-    $result = mysqli_query($con,$query);
-    $response = "<span style='color: green;'>Email Available.</span>";
-    if(mysqli_num_rows($result)){
-        $row = mysqli_fetch_array($result);
-
-        $count = $row['cntUser'];
-
-        if($count > 0){
-            $response = "use";
-        }
-
-    }
-
-    echo $response;
-    die;
-}
-
-//Register User Start
-$length = 10;
-$str = '1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcefghijklmnopqrstuvwxyz';
-
-
-if (isset($_POST['register'])) {
-
-    $username   = $_POST['username'];
-    $email      = $_POST['email'];
-    $accessno   = substr(str_shuffle($str), 0, $length);
-    $error      = array();
-    $errors     = '<div style="margin-top: 50px; margin-left: 50px; margin-right: 50px;"><div class="alert alert-danger alert-center alert-dismissible fade show">User Already Exist!<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div></div>';
-    $errorss    = '<div style="margin-top: 50px; margin-left: 50px; margin-right: 50px;"><div class="alert alert-danger alert-center alert-dismissible fade show">Username Is Taken!<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div></div>';
-
-
-    $username        = mysqli_real_escape_string($con, $username );
-    $email           = mysqli_real_escape_string($con, $email);
-    $accessno        = mysqli_real_escape_string($con, $accessno);
-
-
-    $user_check_query = "SELECT * FROM users WHERE email='$email' OR accessno='$accessno' LIMIT 1";
-    $result = mysqli_query($con, $user_check_query);
-    $user = mysqli_fetch_assoc($result);
-
-    if ($user) { // if user exists
-        if ($user['email'] === $email) {
-            echo $errors;
-        }
-        if ($user['username'] === $username) {
-            echo $errorss;
-        }
-    }else{ $query = "INSERT INTO users (email, username, accessno) 
-                    VALUES('$email', '$username', '$accessno')";
-        if($query){
-            //Send Verification Mail
-            $to = $email;
-            $subject = "Account Verification";
+function sendMail($email,$username,$accessno){
+$to = $email;
+            $subject = "Live Access Code";
 
             $message = "
                             <html>
@@ -123,7 +65,7 @@ if (isset($_POST['register'])) {
                                                     <tr>
                                                         <td class='text-center pdb-2-5x'>
                                                             <center>
-                                                            <a href='https://voteonline.com.ng' target='_blank'><img class='email-logo' src='https://i.imgur.com/OHRyC4K.png' /></a>
+                                                            <a href='https://nigerianqueen.org' target='_blank'><img class='email-logo' src='https://i.imgur.com/OHRyC4K.png' /></a>
                                                             </center>
                                                         </td>
                                                     </tr>
@@ -140,7 +82,7 @@ if (isset($_POST['register'])) {
                                                             <p class='mgb-1x'>Hi $username,</p>
                                                             <p class='mgb-1x'>
                                                                 Welcome! <br />
-                                                                You are receiving this email because you have registered on Stream Online.
+                                                                You are receiving this email because you have subscribed to Nigerian Queen Stream Online.
                                                             </p>
                                                             <p class='mgb-1x'>Copy the access code below to activate and access your account.</p>
                                                             Access Code: $accessno
@@ -174,75 +116,9 @@ if (isset($_POST['register'])) {
             $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 
             // More headers
-            $headers .= 'From: Stream Online™ <donotreply@voteonline.com.ng>' . "\r\n";
+            $headers .= 'From: Stream Online™️ <donotreply@voteonline.com.ng>' . "\r\n";
 
             mail($to,$subject,$message,$headers);
-        }
-        mysqli_query($con, $query);
-        $_SESSION['username'] = $username;
-        $_SESSION['success'] = header("Location: regsuccess");
-        exit();
-    }
 
 }
-//Register User End
-
-
-//Login User Start
-if (isset($_POST['login'])) {
-
-    $username   = $_POST['username'];
-    $email      = $_POST['email'];
-    $accessno   = $_POST['accessno'];
-    $error      = array();
-    $errors     = '<div style="margin-top: 50px; margin-left: 50px; margin-right: 50px;"><div class="alert alert-danger alert-center alert-dismissible fade show">Wrong Username or Password!<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div></div>';
-
-    $username   = mysqli_real_escape_string($con, $username);
-    $email      = mysqli_real_escape_string($con, $email);
-    $accessno   = mysqli_real_escape_string($con, $accessno);
-
-    if (count($error) == 0) {
-        $query = "SELECT * FROM users WHERE email='$email' AND accessno='$accessno'";
-        $results = mysqli_query($con, $query);
-
-        while($row = mysqli_fetch_array($results)) {
-            $username = $row['username'];
-            $email = $row['email'];
-            $accessno = $row['accessno'];
-        }
-
-        if (mysqli_num_rows($results) == 1) {
-            $_SESSION['username'] = $username;
-            $_SESSION['email'] = $email;
-            $_SESSION['accessno'] = $accessno;
-            $_SESSION['success'] = "You are now logged in";
-            header('location: dashboard');
-        }else {
-            header('location: usererror');
-        }
-    }
-}
-//Login User End
-
-
-//Show Users Online Start
-
-$session = session_id();
-$time = time();
-$time_out_in_seconds = 10;
-$time_out = $time - $time_out_in_seconds;
-
-$query = "SELECT * FROM online_users WHERE session = '$session'";
-$send_query = mysqli_query($con, $query);
-$count = mysqli_num_rows($send_query);
-
-if ($count == NULL) {
-    mysqli_query($con, "INSERT INTO online_users(session, time) VALUES('$session', '$time')");
-}else {
-    mysqli_query($con, "UPDATE online_users SET time = '$time' WHERE session = '$session'");
-}
-
-$online_users_query = mysqli_query($con, "SELECT * FROM online_users WHERE time > '$time_out'");
-$count_user = mysqli_num_rows($online_users_query);
-
-//Show Users Online End
+?>

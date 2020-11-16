@@ -1,6 +1,7 @@
 <?php
 error_log("just here");
 require_once ('./config/dbconnect.php');
+require ('mail.php');
 //add the db call here
 if ((strtoupper($_SERVER['REQUEST_METHOD']) != 'POST' ) || !array_key_exists('HTTP_X_PAYSTACK_SIGNATURE', $_SERVER) ) {
     // only a post with paystack signature header gets our attention
@@ -49,6 +50,8 @@ $username=$event->data->metadata->username;
 
 
 mysqli_query($con,"insert into users(email,username,accessno) values ('$email','$username','$accessno') ");
+
+sendMail($email,$username,$accessno);
 
      
         break;

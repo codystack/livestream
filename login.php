@@ -1,8 +1,5 @@
 <?php
 session_start();
-?>
-<?php
-
 //Login User Start
 require_once ('./config/dbconnect.php');
 
