@@ -40,7 +40,7 @@ switch($event->event){
     // charge.success
     case 'charge.success':
  //generate accessno 
-$accessno='1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcefghijklmnopqrstuvwxyz';
+$accessno= uniqid();
 //$accessno=substr(str_shuffle($str), 0, $length);
 //$accessno= mysqli_real_escape_string($con, $accessno);
 
@@ -50,7 +50,7 @@ $email=$event->data->customer->email;
 $username=$event->data->metadata->username;
 
 
-mysqli_query($con,"insert into users(email,uername,accessno) values ('$email','$username','$accessno') ");
+mysqli_query($con,"insert into users(email,username,accessno) values ('$email','$username','$accessno') ");
 
 
      
