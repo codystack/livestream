@@ -224,7 +224,7 @@ if (isset($_POST['login'])) {
 }
 //Login User End
 
-$count_users = 51;
+$count_users = 35;
 
 
 //Show Users Online Start
