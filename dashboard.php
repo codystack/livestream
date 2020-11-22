@@ -27,7 +27,7 @@ require_once "./config/controller.php";
 								<div class="card-body">
 									<div class="row">
 										<div class="col mt-0">
-											<h5 class="card-title">Live Users</h5>
+											<h5 class="card-title">Active Users</h5>
 										</div>
 
 										<div class="col-auto">
@@ -38,7 +38,7 @@ require_once "./config/controller.php";
 											</div>
 										</div>
 									</div>
-									<h1 class="display-5 mt-1 mb-3"><?php echo $count_user; ?></h1>
+									<h1 class="display-5 mt-1 mb-3"><?php echo $count_users; ?></h1>
 
 								</div>
 							</div>
