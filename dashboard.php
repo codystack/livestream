@@ -38,7 +38,7 @@ require_once "./config/controller.php";
 											</div>
 										</div>
 									</div>
-									<h1 class="display-5 mt-1 mb-3"><?php echo $count_users; ?></h1>
+									<h1 class="display-5 mt-1 mb-3"><?php echo $count_user; ?></h1>
 
 								</div>
 							</div>
