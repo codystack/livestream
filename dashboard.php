@@ -59,9 +59,9 @@ require_once "./config/controller.php";
                                             </div>
                                         </div>
                                     </div>
-                                    <h1 class="display-5 mt-1 mb-3">Fashion Show</h1>
+                                    <h1 class="display-5 mt-1 mb-3">Talent Competition</h1>
                                     <div class="mb-0">
-                                        22nd Nov 2020 | 4:00PM (WAT)
+                                        22nd Nov 2020 | 5:10PM (WAT)
                                     </div>
 
                                 </div>
