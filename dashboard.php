@@ -17,7 +17,7 @@ require_once "./config/controller.php";
 						<div class="col-md-12 col-lg-8 col-xl-8">
 							<div class="card">
                                 <div class="embed-responsive embed-responsive-16by9">
-                                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/ClNPZsiBFZI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/4fFLEhetOlc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                 </div>
 							</div>
 						</div>
@@ -48,7 +48,7 @@ require_once "./config/controller.php";
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col mt-0">
-                                            <h5 class="card-title">Next Event</h5>
+                                            <h5 class="card-title">Upcoming Event</h5>
                                         </div>
 
                                         <div class="col-auto">
@@ -59,9 +59,9 @@ require_once "./config/controller.php";
                                             </div>
                                         </div>
                                     </div>
-                                    <h1 class="display-5 mt-1 mb-3">Talent Competition</h1>
+                                    <h1 class="display-5 mt-1 mb-3">Grand Finale</h1>
                                     <div class="mb-0">
-                                        22nd Nov 2020 | 5:10PM (WAT)
+                                        27th Nov 2020 | 7:00PM (WAT)
                                     </div>
 
                                 </div>
