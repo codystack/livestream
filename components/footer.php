@@ -141,7 +141,7 @@
             </div>
             <div class="modal-body m-3" style="text-align: center">
                 <h2>Hello <?php echo $_SESSION['username']  ?></h2>
-                <p class="mb-3">This video remains the property of 001 Entertainment. Any alteration, copying, downloading, reproduction and storage in any medium, including any web site, without the prior written consent of 001 Entertainment (Nigeria) will be considered a <strong>criminal offense,</strong> and therefore liable for prosecution. </p>
+                <p class="mb-3">This videos/contents remains the property of 001 Entertainment. Any alteration, copying, downloading, reproduction and storage in any medium, including any web site, without the prior written consent of 001 Entertainment (Nigeria) will be considered a <strong>criminal offense,</strong> and therefore liable for prosecution. </p>
                 <button type="button" class="btn btn-primary btn-lg mb-5" data-dismiss="modal">Close</button>
             </div>
         </div>
