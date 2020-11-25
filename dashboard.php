@@ -17,7 +17,7 @@ require_once "./config/controller.php";
 						<div class="col-md-12 col-lg-8 col-xl-8">
 							<div class="card">
                                 <div class="embed-responsive embed-responsive-16by9">
-                                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/4fFLEhetOlc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/4fFLEhetOlc?rel=0&showinfo=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                 </div>
 							</div>
 						</div>
@@ -67,32 +67,10 @@ require_once "./config/controller.php";
                                 </div>
                             </div>
 
-                            <!-- Access Code -->
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="row mb-3">
-                                        <div class="col mt-0">
-                                            <h5 class="card-title">Streaming Access Code</h5>
-                                        </div>
-
-                                        <div class="col-auto">
-                                            <div class="avatar">
-                                                <div class="avatar-title rounded-circle bg-primary-dark">
-                                                    <i class="align-middle" data-feather="code"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="input-group input-group-lg">
-                                            <input type="text" class="form-control" id="refLink" value="<?php echo $_SESSION['accessno'] ?>">
-                                            <span class="input-group-append">
-                                                  <button onclick="myFunction()" class="btn btn-primary btn-lg" type="button">Copy</button>
-                                                </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <!-- View Previous Events -->
+                            <form method="get" action="archive">
+                                <button class="btn btn-primary btn-lg btn-block mb-3">View Previous Events</button>
+                            </form>
                         </div>
 					</div>
 
