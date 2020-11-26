@@ -14,7 +14,7 @@ require_once "./config/controller.php";
                         <br><a class="btn btn-primary" href="dashboard" style="background: #ffffff; color: #153D77; font-weight: 600; border-color: #153D77">Go Back</a>
 					</div>
 
-					<div class="row">
+					<div class="row mb-5">
 						<div class="col-md-12 col-lg-4 col-xl-4" style="text-align: center">
 							<div class="card">
                                 <div class="embed-responsive embed-responsive-16by9">
@@ -31,6 +31,15 @@ require_once "./config/controller.php";
                                 </div>
                             </div>
                             <h2>Fashion Show</h2>
+                        </div>
+
+                        <div class="col-md-12 col-lg-4 col-xl-4" style="text-align: center">
+							<div class="card">
+                                <div class="embed-responsive embed-responsive-16by9">
+                                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zSBmvXE2a8Y" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" frameborder="0" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                            <h2>Talent Competition</h2>
                         </div>
                         
                     </div>
