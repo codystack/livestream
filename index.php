@@ -42,8 +42,9 @@
 						<div class="login-wrap text-center align-items-center p-4 p-lg-5">
                             <div class="d-flex">
                                 <div class="text w-100">
-                                    <h2>Welcome to login</h2>
-                                    <p>Don't have an account?</p>
+                                    <p class="mb-0">Watch TNQ2021 Grand Finale</p>
+                                    <h2 class="mb-0">PREMIERING LIVE!</h2>
+                                    <p class="mt-0">5PM (WAT) | SAT 21ST AUG.</p>
                                     <a href="login" class="btn btn-dark btn-outline-white">Get All Access</a>
                                 </div>
 			      	        </div>
