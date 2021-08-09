@@ -14,9 +14,9 @@ if ($WEBSITE_ENVIRONMENT =="Development") {
     error_reporting(E_ALL ^ E_NOTICE); // turn ON showing errors
 } else {
     $host 		= "localhost";
-    $user 		= "nigeabvg_tnq";
+    $user 		= "nigeabvg_livestream";
     $password 	= "Webify2020!!";
-    $database 	= "nigeabvg_tnq";
+    $database 	= "nigeabvg_livestream";
     error_reporting(E_ALL ^ E_NOTICE); // turn ON showing errors
 }
 // connect to the database server
