@@ -22,7 +22,7 @@
 
 </head>
 
-<body style="background: url(https://i.imgur.com/YRaW9DX.jpg); background-repeat: no-repeat; background-attachment: fixed; background-size: cover;">
+<body style="background: url(./img/contestants_bg-scaled.jpg); background-repeat: no-repeat; background-attachment: fixed; background-size: cover;">
 <div class="splash active">
     <div class="splash-icon"></div>
 </div>
@@ -38,7 +38,7 @@
                             <div class="m-sm-4">
                                 <div class="text-center">
                                     <img src="https://i.imgur.com/tPKodUd.png" class="mb-4" width="202" height="202" />
-                                    <h2>Wrong Username or Access Code</h2>
+                                    <h2>Wrong Email or Access Code</h2>
                                     <p>Please verify or <a href="register">click here</a> to get access code</p>
                                 </div>
 

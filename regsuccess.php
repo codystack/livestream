@@ -20,12 +20,12 @@ header( "refresh:20;url=login" );
 
 </head>
 
-<body style="background: url(https://i.imgur.com/YRaW9DX.jpg); background-repeat: no-repeat; background-attachment: fixed; background-size: cover;">
+<body style="background: url(./img/contestants_bg-scaled.jpg); background-repeat: no-repeat; background-attachment: fixed; background-size: cover;">
 <div class="splash active">
     <div class="splash-icon"></div>
 </div>
 
-<main class="main w-100">
+<main class="main h-100 w-100">
     <div class="container h-100">
         <div class="row" style="padding-top: 110px;">
             <div class="col-sm-10 col-md-8 col-lg-6 mx-auto d-table h-100">
@@ -42,7 +42,7 @@ header( "refresh:20;url=login" );
 
                                 <form action="login">
                                     <div class="text-center mt-3">
-                                        <button type="submit" class="btn btn-lg btn-primary">Go Back</button>
+                                        <button type="submit" class="btn btn-lg btn-primary">Login to your account</button>
                                     </div>
                                 </form>
                             </div>

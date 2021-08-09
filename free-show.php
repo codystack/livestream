@@ -1,16 +1,3 @@
-<?php 
-  session_start();
-if (!isset($_SESSION['email'])) {
-    $_SESSION['msg'] = "You must log in first";
-    header('location: login');
-}
-if (isset($_GET['logout'])) {
-    session_destroy();
-    unset($_SESSION['email']);
-    header("location: login");
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -44,20 +31,23 @@ if (isset($_GET['logout'])) {
 <div class="wrapper">
     <!-- Top Menu -->
     <div class="main">
-        <!--<nav class="navbar navbar-expand navbar-theme">
-            <img src="https://i.imgur.com/XSGaWUp.png" width="200px">
+			<main class="content">
+				<div class="container-fluid">
 
-            <div class="navbar-collapse collapse">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item dropdown ml-lg-2">
-                        <a class="nav-link dropdown-toggle position-relative" href="#" id="userDropdown" data-toggle="dropdown">
-                            <i class="align-middle fas fa-stream"></i>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-                            <a class="dropdown-item" href="logout"><i class="align-middle mr-1 fas fa-fw fa-arrow-alt-circle-right"></i> Log Out</a>
+					<div class="row">
+                        <div class="col-md-12 col-lg-12 text-center pt-3
+                         pb-5">
+                            <img src="https://i.imgur.com/XSGaWUp.png" width="300px">
                         </div>
-                    </li>
-                </ul>
-            </div>
+						<div class="col-md-12 col-lg-8 col-xl-8 mx-auto">
+							<div class="card">
+                                <div class="embed-responsive embed-responsive-16by9">
+                                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/MxAWlYrp5Jg?rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                </div>
+							</div>
+						</div>
+					</div>
 
-        </nav>-->
+			</main>
+
+<?php include ('./components/footer.php'); ?>

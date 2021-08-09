@@ -25,15 +25,15 @@ session_start();
 
 </head>
 
-<body style="background: url(https://i.imgur.com/YRaW9DX.jpg); background-repeat: no-repeat; background-attachment: fixed; background-size: cover;">
+<body style="background: url(./img/contestants_bg-scaled.jpg); background-repeat: no-repeat; background-attachment: fixed; background-size: cover;">
 <div class="splash active">
     <div class="splash-icon"></div>
 </div>
 
-<main class="main w-100">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-10 col-md-8 col-lg-6 mx-auto d-table h-100">
+<main class="main h-100 w-100">
+    <div class="container h-100">
+        <div class="row h-100">
+            <div class="col-sm-10 col-md-6 col-lg-6 mx-auto d-table h-100">
                 <div class="d-table-cell align-middle">
 
 
@@ -50,10 +50,10 @@ session_start();
                                     <img src="https://i.imgur.com/B6LyEZD.png" alt="login icon" class="img-fluid rounded mb-4" width="112" height="112" />
                                 </div>
                                 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" id="paymentForm">
-                                    <div class="form-group">
+                                    <!--<div class="form-group">
                                         <label>Username</label>
                                         <input class="form-control form-control-lg" id="username" type="text" pattern="[a-zA-Z ]+" required name="username" placeholder="Enter username" />
-                                    </div>
+                                    </div>-->
                                     <div class="form-group">
                                         <label>Email</label>
                                         <input class="form-control form-control-lg" id="email" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required name="email" placeholder="Enter email" />
@@ -61,10 +61,10 @@ session_start();
                                     </div>
                                     <div class="form-group">
                                         <label>Amount</label>
-                                        <input class="form-control form-control-lg" type="text"  id="amount" value="2000" disabled />
+                                        <input class="form-control form-control-lg" type="text"  id="amount" value="3000" disabled />
                                     </div>
-                                    <div class="text-center mt-3">
-                                        <button class="btn btn-lg btn-primary" onclick="payWithPaystack()">Get Access</button>
+                                    <div class="text-center mt-4">
+                                        <button class="btn btn-lg btn-block btn-primary" onclick="payWithPaystack()">Get your streaming access</button>
                                     </div>
                                 </form>
                             </div>

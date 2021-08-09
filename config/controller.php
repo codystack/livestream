@@ -30,7 +30,6 @@ $str = '1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcefghijklmnopqrstuvwxyz';
 
 if (isset($_POST['register'])) {
 
-    $username   = $_POST['username'];
     $email      = $_POST['email'];
     $accessno   = substr(str_shuffle($str), 0, $length);
     $error      = array();
@@ -38,7 +37,6 @@ if (isset($_POST['register'])) {
     $errorss    = '<div style="margin-top: 50px; margin-left: 50px; margin-right: 50px;"><div class="alert alert-danger alert-center alert-dismissible fade show">Username Is Taken!<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div></div>';
 
 
-    $username        = mysqli_real_escape_string($con, $username );
     $email           = mysqli_real_escape_string($con, $email);
     $accessno        = mysqli_real_escape_string($con, $accessno);
 
@@ -51,11 +49,8 @@ if (isset($_POST['register'])) {
         if ($user['email'] === $email) {
             echo $errors;
         }
-        if ($user['username'] === $username) {
-            echo $errorss;
-        }
-    }else{ $query = "INSERT INTO users (email, username, accessno) 
-                    VALUES('$email', '$username', '$accessno')";
+    }else{ $query = "INSERT INTO users (email, accessno) 
+                    VALUES('$email', '$accessno')";
         if($query){
             //Send Verification Mail
             $to = $email;
@@ -191,7 +186,7 @@ if (isset($_POST['register'])) {
 //Login User Start
 if (isset($_POST['login'])) {
 
-    $username   = $_POST['username'];
+
     $email      = $_POST['email'];
     $accessno   = $_POST['accessno'];
     $error      = array();
@@ -206,7 +201,6 @@ if (isset($_POST['login'])) {
         $results = mysqli_query($con, $query);
 
         while($row = mysqli_fetch_array($results)) {
-            $username = $row['username'];
             $email = $row['email'];
             $accessno = $row['accessno'];
         }

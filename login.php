@@ -5,13 +5,11 @@ require_once ('./config/dbconnect.php');
 
 if (isset($_POST['login'])) {
 
-    $username   = $_POST['username'];
     $email      = $_POST['email'];
     $accessno   = $_POST['accessno'];
     $error      = array();
     $errors     = '<div style="margin-top: 50px; margin-left: 50px; margin-right: 50px;"><div class="alert alert-danger alert-center alert-dismissible fade show">Wrong Username or Password!<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div></div>';
 
-    $username   = mysqli_real_escape_string($con, $username);
     $email      = mysqli_real_escape_string($con, $email);
     $accessno   = mysqli_real_escape_string($con, $accessno);
 
@@ -20,13 +18,11 @@ if (isset($_POST['login'])) {
         $results = mysqli_query($con, $query);
 
         while($row = mysqli_fetch_array($results)) {
-            $username = $row['username'];
             $email = $row['email'];
             $accessno = $row['accessno'];
         }
 
         if (mysqli_num_rows($results) == 1) {
-            $_SESSION['username'] = $username;
             $_SESSION['email'] = $email;
             $_SESSION['accessno'] = $accessno;
             $_SESSION['success'] = "You are now logged in";
@@ -58,7 +54,7 @@ if (isset($_POST['login'])) {
     <title>Stream Online&trade; :: Nigeria's 1st online streaming platform</title>
     <link href="css/modern.css" rel="stylesheet">
 </head>
-<body style="background: url(https://i.imgur.com/YRaW9DX.jpg); background-repeat: no-repeat; background-attachment: fixed; background-size: cover;">
+<body style="background: url(./img/contestants_bg-scaled.jpg); background-repeat: no-repeat; background-attachment: fixed; background-size: cover;">
 <div class="splash active">
     <div class="splash-icon"></div>
 </div>
@@ -66,7 +62,7 @@ if (isset($_POST['login'])) {
 <main class="main h-100 w-100">
     <div class="container h-100">
         <div class="row h-100">
-            <div class="col-sm-10 col-md-8 col-lg-6 mx-auto d-table h-100">
+            <div class="col-sm-10 col-md-6 col-lg-6 mx-auto d-table h-100">
                 <div class="d-table-cell align-middle">
 
 
@@ -91,8 +87,8 @@ if (isset($_POST['login'])) {
                                         <label>Access No.</label>
                                         <input class="form-control form-control-lg" type="text" required value="<?php if(isset($_COOKIE["accessno"])) { echo $_COOKIE["accessno"]; } ?>" name="accessno" placeholder="Enter your access no." />
                                     </div>
-                                    <div class="text-center mt-3">
-                                        <button type="submit" class="btn btn-lg btn-primary" name="login">Start Streaming</button>
+                                    <div class="text-center mt-4">
+                                        <button type="submit" class="btn btn-lg btn-primary btn-block" name="login">Start Streaming</button>
                                     </div>
                                 </form>
                             </div>

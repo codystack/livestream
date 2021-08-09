@@ -5,24 +5,24 @@ require_once "./config/controller.php";
 			<main class="content">
 				<div class="container-fluid">
 
-					<div class="header">
-						<h1 class="header-title1" id="greet" style="display: inline-block"></h1> ::
-                        <h1 class="header-title1">
-                            <div id="greet"></div>
-                            <?php echo $_SESSION['username']?>
-                        </h1>
-					</div>
-
 					<div class="row">
-						<div class="col-md-12 col-lg-8 col-xl-8">
+                        <div class="col-md-12 col-lg-12 text-center pt-3
+                         pb-5">
+                            <img src="https://i.imgur.com/XSGaWUp.png" width="300px">
+                        </div>
+						<div class="col-md-12 col-lg-8 col-xl-8 mx-auto">
 							<div class="card">
                                 <div class="embed-responsive embed-responsive-16by9">
-                                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/HIKHUrj69MI?rel=0&showinfo=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/ezP2AF1bkQg?rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                 </div>
 							</div>
+                            <form method="get" action="archive">
+                                <button class="btn btn-primary btn-lg btn-block mb-3">View Previous Events</button>
+                            </form>
 						</div>
+                        <!--
 						<div class="col-md-12 col-lg-4 col-xl-4">
-                            <!-- Active Viewers -->
+                          
 							<div class="card">
 								<div class="card-body">
 									<div class="row">
@@ -43,7 +43,8 @@ require_once "./config/controller.php";
 								</div>
 							</div>
 
-                            <!-- Next Event -->
+                            
+                            
                             <div class="card">
                                 <div class="card-body">
                                     <div class="row">
@@ -66,12 +67,7 @@ require_once "./config/controller.php";
 
                                 </div>
                             </div>
-
-                            <!-- View Previous Events -->
-                            <form method="get" action="archive">
-                                <button class="btn btn-primary btn-lg btn-block mb-3">View Previous Events</button>
-                            </form>
-                        </div>
+                        </div>-->
 					</div>
 
 			</main>

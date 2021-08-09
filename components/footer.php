@@ -91,18 +91,6 @@
     });
 </script>
 
-<script>
-    var time = new Date().getHours();
-    if (time < 12) {
-        greeting = "Good Morning";
-    } else if (time < 16) {
-        greeting = "Good Afternoon";
-    } else {
-        greeting = "Good Evening";
-    }
-    document.getElementById("greet").innerHTML = greeting;
-</script>
-
 <script type="text/javascript">
     function myFunction() {
         var copyText = document.getElementById("refLink");
@@ -140,7 +128,7 @@
                 </button>
             </div>
             <div class="modal-body m-3" style="text-align: center">
-                <h2>Hello <?php echo $_SESSION['username']  ?></h2>
+                <h2>Hello Chief!</h2>
                 <p class="mb-3">This videos/contents remains the property of 001 Entertainment. Any alteration, copying, downloading, reproduction and storage in any medium, including any web site, without the prior written consent of 001 Entertainment (Nigeria) will be considered a <strong>criminal offense,</strong> and therefore liable for prosecution. </p>
                 <button type="button" class="btn btn-primary btn-lg mb-5" data-dismiss="modal">Close</button>
             </div>
