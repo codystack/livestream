@@ -119,6 +119,7 @@
 </script>
 
 <!-- Make Deposit Modal Start -->
+<!--
 <div class="modal fade" id="depositmodal" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
@@ -142,7 +143,7 @@
         $("#depositmodal").modal('show');
     });
 </script>
-
+-->
 <script type="text/javascript">
     $('#myModal').on('shown.bs.modal', function () {
     $('#myInput').trigger('focus')
