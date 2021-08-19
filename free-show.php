@@ -39,10 +39,17 @@
                          pb-5">
                             <img src="https://i.imgur.com/XSGaWUp.png" width="300px">
                         </div>
-						<div class="col-md-12 col-lg-8 col-xl-8 mx-auto">
+						<div class="col-md-12 col-lg-6 col-xl-6 mx-auto">
 							<div class="card">
                                 <div class="embed-responsive embed-responsive-16by9">
                                     <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/MxAWlYrp5Jg?rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                </div>
+							</div>
+						</div>
+                        <div class="col-md-12 col-lg-6 col-xl-6 mx-auto">
+							<div class="card">
+                                <div class="embed-responsive embed-responsive-16by9">
+                                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/ezP2AF1bkQg?rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                 </div>
 							</div>
 						</div>

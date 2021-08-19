@@ -33,10 +33,10 @@
 					<div class="wrap d-md-flex">
 						<div class="text-wrap p-4 p-lg-5 text-center d-flex align-items-center order-md-last">
 							<div class="text w-100">
-                                <p class="mb-0">Watch the Preliminary Show</p>
-								<h2 class="mb-0">PREMIERING LIVE!</h2>
-								<p class="mt-0">10AM (WAT) | WED 18TH AUG.</p>
-								<a href="free-show" class="btn btn-white btn-outline-white">Stream for Free</a>
+                                <p class="mb-0">Rewatch the Preliminary Show</p>
+								<h2 class="mb-0">PREMIERED LIVE!</h2>
+								<p class="mt-0">2PM (WAT) | WED 18TH AUG.</p>
+								<a href="free-show" class="btn btn-white btn-outline-white">Rewatch for Free</a>
 							</div>
 			            </div>
 						<div class="login-wrap text-center align-items-center p-4 p-lg-5">
